@@ -1,0 +1,59 @@
+/* Portfolio Arthur Ranchin — feuille de style commune
+   Maquette Figma : fond sombre, cartes et accents indigo. */
+:root{color-scheme:dark;--bg:#0d111b;--surface:#161e2c;--text:#f4f6fa;--muted:#adb8c9;--line:#303a4b;--accent:#a5b4fc;--primary:#5558d9}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 Inter,system-ui,-apple-system,Segoe UI,sans-serif}
+a{color:var(--accent);text-underline-offset:3px}
+a:hover{text-decoration-color:var(--text);color:var(--text)}
+a:focus-visible,button:focus-visible{outline:3px solid #c5ccff;outline-offset:4px;border-radius:4px}
+header{display:flex;align-items:center;justify-content:space-between;gap:2rem;padding:1.35rem max(1.5rem,calc((100vw - 1216px)/2));border-bottom:1px solid var(--line)}
+header>p{margin:0;font-size:1.5rem;font-weight:800}
+header>p a{text-decoration:none}
+nav ul{display:flex;align-items:center;flex-wrap:wrap;gap:1.2rem;list-style:none;padding:0;margin:0}
+nav a{text-decoration:none;color:var(--muted);font-size:.92rem;font-weight:600}
+nav [aria-current=page]{color:var(--accent)}
+main{max-width:1216px;margin:auto;padding:3.5rem 1.5rem 4rem}
+section{margin-bottom:3.5rem;scroll-margin-top:2rem}
+h1,h2,h3{line-height:1.22;margin-top:0}
+h1{font-size:clamp(2.5rem,5vw,4rem);margin-bottom:1rem}
+h2{font-size:clamp(1.6rem,3vw,2rem);margin-bottom:1.2rem}
+h3{font-size:1.25rem}
+p{margin-top:0}
+#presentation{display:grid;grid-template-columns:minmax(0,1.9fr) minmax(260px,1fr);column-gap:3rem;align-items:start}
+#presentation>:not(aside){grid-column:1}
+#presentation>aside{grid-column:2;grid-row:1/span 10;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.5rem}
+#presentation>aside h2{color:var(--accent);font-size:1rem;letter-spacing:.04em}
+#presentation>p:first-child,.eyebrow{font-size:.82rem;color:var(--accent);font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+#presentation>p:nth-child(3),.lead{color:var(--muted);font-size:1.22rem}
+#presentation a[download],.button{display:inline-block;padding:.65rem 1.05rem;background:var(--primary);border-radius:9px;color:#fff;text-decoration:none;font-weight:650}
+#presentation a[download]:hover,.button:hover{background:#7477ef;color:#fff}
+#competences dl{display:grid;grid-template-rows:auto auto;grid-auto-columns:minmax(0,1fr);grid-auto-flow:column;gap:0 12px}
+#competences dt,#competences dd{background:var(--surface);padding:10px 16px;margin:0;border-left:1px solid var(--line);border-right:1px solid var(--line)}
+#competences dt{font-weight:700;border-radius:12px 12px 0 0;border-top:1px solid var(--line);padding-top:16px}
+#competences dd{color:var(--muted);border-bottom:1px solid var(--line);border-radius:0 0 12px 12px;padding-bottom:16px}
+#realisations{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+#realisations>h2,#realisations>p{grid-column:1/-1;margin-bottom:0}
+#realisations>article,.card,.project,.timeline article{border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:1.35rem}
+#realisations article>p:first-child{color:var(--accent);font-size:.78rem;text-transform:uppercase;font-weight:700}
+#realisations article p,.muted,.card p,.project p{color:var(--muted)}
+#realisations article a{font-weight:600}
+#parcours,#synthese,#e5,#e6,#veille,#projets,#contact{padding-top:.75rem;border-top:1px solid var(--line)}
+article+article{margin-top:1rem}
+address{font-style:normal}
+footer{padding:1.5rem;text-align:center;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+footer a{color:var(--accent)}
+.skip-link{position:absolute;top:-150px;left:1rem;padding:.75rem 1rem;background:#fff;color:#111;z-index:10}
+.skip-link:focus{top:1rem}
+.page-header{margin-bottom:2rem}
+.page-header>p:first-child{color:var(--accent);font-size:.85rem;font-weight:700}
+.timeline,.project-list{display:grid;gap:1rem}
+.timeline{grid-template-columns:repeat(2,minmax(0,1fr))}
+.project-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+.project h3,.timeline h3{margin-bottom:.55rem}
+.project dl{margin:0}
+.project dt{font-weight:700;margin-top:.7rem}
+.project dd{margin-left:0;color:var(--muted)}
+.tag{display:inline-block;font-size:.8rem;color:var(--accent);padding:.14rem .55rem;border:1px solid var(--line);border-radius:20px}
+@media(max-width:980px){header{flex-direction:column;align-items:flex-start}main{padding-top:2.5rem}#realisations{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){header{gap:1rem}nav ul{gap:.65rem 1rem}main{padding:2rem 1rem}#presentation{display:block}#presentation>aside{margin-top:1.5rem}#competences dl{grid-auto-flow:row;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:none;gap:.45rem}#competences dt,#competences dd{border:1px solid var(--line);border-radius:9px}#realisations,.project-list,.timeline{grid-template-columns:1fr}#realisations>h2,#realisations>p{grid-column:auto}h1{font-size:2.5rem}footer{font-size:.8rem}}
